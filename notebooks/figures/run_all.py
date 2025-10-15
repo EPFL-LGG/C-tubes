@@ -90,6 +90,12 @@ def main():
     if not nb_paths:
         print("No notebooks found.")
         return
+    
+    # Sort notebooks by numeric value after 'fig' prefix (e.g., fig2_... before fig10_)
+    def notebook_sort_key(nb):
+        m = re.match(r"fig(\d+)_", nb.stem)
+        return int(m.group(1)) if m else float('inf')
+    nb_paths = sorted(nb_paths, key=notebook_sort_key)
 
     python_exe = sys.executable
 
