@@ -84,7 +84,7 @@ jupyter lab
 
 The notebook `notebooks/demo.ipynb` provides a quick overview of the main features of the codebase.
 
-To reproduce the figures in the paper, run the notebooks in `notebooks/figures/`.
+To reproduce the figures in the paper, run the notebooks in `notebooks/figures/`. The output of each notebook is saved in a separate folder in `notebooks/figures/output/`.
 
 To execute all the notebooks in `notebooks/figures/` at once and generate all the data from the paper, run:
 
