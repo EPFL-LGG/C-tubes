@@ -1,9 +1,3 @@
 [submodule "ext/torchcubicspline"]
 	path = ext/torchcubicspline
 	url = git@github.com:qbecky/torchcubicspline.git
-[submodule "ext/geolab"]
-	path = ext/geolab
-	url = git@github.com:EPFL-LGG/geolab.git
-[submodule "ext/pytorch3d"]
-	path = ext/pytorch3d
-	url = https://github.com/facebookresearch/pytorch3d.git
