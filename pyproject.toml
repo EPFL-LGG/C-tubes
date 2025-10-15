@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "developable_tube_ctubes"
+version = "0.0.0"
+description = "Developable tube utilities (Ctubes)"
+readme = "README.md"
+requires-python = "==3.11.*"
+dependencies = [
+    "numpy",
+    "scipy==1.10.1",
+    "matplotlib",
+    "meshplot",
+    "pip",
+    "ipykernel",
+    "ipynbname",
+    "dill",
+    "libigl",
+    "ipympl",
+    "nbconvert",
+    "torch",
+    "jupyterlab",
+    "torchcubicspline @ file:ext/torchcubicspline",
+]
+
+[tool.setuptools]
+# Map the root package namespace to the `python/` directory
+package-dir = {"" = "python"}
+
+[tool.setuptools.packages.find]
+where = ["python"]
+

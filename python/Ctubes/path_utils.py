@@ -25,12 +25,12 @@ def get_name():
     return name
 
 
-def setup_paths(notebook_name, test_name=None):
+def setup_paths(notebook_name, output_root_dir=os.getcwd(), test_name=None):
     # Find the root directory
     current_path = os.path.abspath(os.getcwd())
     split = current_path.split("C-tubes")
     if len(split) < 2:
-        raise ValueError("Please rename the repository into 'C-tubes'")
+        raise ValueError("Please rename the repository 'C-tubes'")
     root = os.path.join(split[0], "C-tubes")
 
     # Determine subdirectory path
@@ -39,18 +39,14 @@ def setup_paths(notebook_name, test_name=None):
         subdir = os.path.join(notebook_name, test_name)
     name = test_name if test_name is not None else notebook_name
 
-    # Set up all paths
+    # Set up all 
     paths = PathDict({
         "name": name,
-        "python_scripts": os.path.join(root, "python"),
-        "torchcubicspline": os.path.join(root, "ext/torchcubicspline"),
-        "geolab": os.path.join(root, "ext/geolab"),
-        "output_root": os.path.join(root, "notebooks/figures/output"),
-        "output": os.path.join(root, f"notebooks/figures/output/{subdir}"),
-        "output_data": os.path.join(root, f"notebooks/figures/output/{subdir}/data"),
-        "output_meshes": os.path.join(root, f"notebooks/figures/output/{subdir}/meshes"),
-        "output_opt": os.path.join(root, f"notebooks/figures/output/{subdir}/opt"),
         "data": os.path.join(root, "data"),
+        "output": os.path.join(output_root_dir, "output", subdir),
+        "output_data": os.path.join(output_root_dir, "output", subdir, "data"),
+        "output_meshes": os.path.join(output_root_dir, "output", subdir, "meshes"),
+        "output_opt": os.path.join(output_root_dir, "output", subdir, "opt"),
     })
 
     return paths
