@@ -12,16 +12,10 @@ dependencies = [
     "numpy",
     "scipy==1.10.1",
     "matplotlib",
-    "meshplot",
     "pip",
-    "ipykernel",
-    "ipynbname",
     "dill",
     "libigl",
-    "ipympl",
-    "nbconvert",
     "torch",
-    "jupyterlab",
     "torchcubicspline @ file:ext/torchcubicspline",
 ]
 

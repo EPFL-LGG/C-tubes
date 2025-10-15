@@ -16,5 +16,6 @@ dependencies:
     - libigl
     - ipympl
     - nbconvert
+    - nbstripout
     - torch
     - jupyterlab
