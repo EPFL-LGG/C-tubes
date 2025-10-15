@@ -37,26 +37,26 @@ This repository contains the source code and data for [C-Tubes: Design and Optim
 
 ## Installation
 
-Clone the repository recursively
+Clone the repository recursively:
 
 ```bash
 git clone --recurse-submodules git@github.com:EPFL-LGG/C-tubes.git
 ```
 
-If you already cloned the repository without the `--recurse-submodules` flag, run
+If you already cloned the repository without the `--recurse-submodules` flag, run:
 
 ```bash
 git submodule update --init --recursive
 ```
 
-To create a conda environment and install the dependencies run
+To create a conda environment and install the dependencies run:
 
 ```bash
 conda env create -f environment.yml
 conda activate C-tubes
 ```
 
-Install the `Ctubes` package in editable mode
+Install the `Ctubes` package in editable mode:
 
 ```bash
 pip install -e .
@@ -76,7 +76,7 @@ nbstripout --install
 
 ## Running the Code
 
-With the conda environment activated, you can run a Jupyter notebook by starting a Jupyter Lab server in the repository root folder
+With the conda environment activated, you can run a Jupyter notebook by starting a Jupyter Lab server in the repository root folder:
 
 ```bash
 jupyter lab
