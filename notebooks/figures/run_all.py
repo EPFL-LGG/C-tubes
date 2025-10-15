@@ -101,7 +101,7 @@ def main():
             continue
         print('\n' + '='*72)
         print(f"Notebook: {nb.name}")
-        print('='*72)
+        print('='*72 + '\n')
 
         try:
             py_generated = convert_notebook(nb)
