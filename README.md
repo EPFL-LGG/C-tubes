@@ -68,6 +68,11 @@ pip install -e .
 pip install "git+https://github.com/facebookresearch/pytorch3d.git"
 ```
 
+For development, installing the `nbstripout` git filter is recommended to avoid committing large outputs in Jupyter notebooks:
+
+```bash
+nbstripout --install
+```
 
 ## Running the Code
 
