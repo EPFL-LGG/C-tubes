@@ -1,0 +1,20 @@
+name: C-tubes
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - scipy=1.10.1
+  - numpy
+  - matplotlib
+  - meshplot
+  - pip
+  - pip:
+    - ipykernel
+    - ipynbname
+    - dill
+    - libigl
+    - ipympl
+    - nbconvert
+    - torch
+    - jupyterlab
