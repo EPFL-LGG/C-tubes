@@ -62,6 +62,8 @@ Install the `Ctubes` package in editable mode:
 pip install -e .
 ```
 
+### Optional Dependencies
+
 [pytorch3d](https://pytorch3d.org/), used in the minimal surface example in `notebooks/figures/fig17_min_surf.ipynb`, can be optionally installed via pip:
 
 ```bash
