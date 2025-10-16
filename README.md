@@ -52,11 +52,12 @@ git submodule update --init --recursive
 To create a conda environment and install the dependencies run:
 
 ```bash
+cd C-tubes
 conda env create -f environment.yml
 conda activate C-tubes
 ```
 
-Install the `Ctubes` package in editable mode:
+and install the `Ctubes` package in editable mode:
 
 ```bash
 pip install -e .
