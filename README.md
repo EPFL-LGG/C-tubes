@@ -2,7 +2,7 @@
 
   <h1 align="center">C-Tubes: Design and Optimization of Tubular Structures Composed of Developable Strips</h1>
 
-  ![Teaser](./images/Teaser.png)
+  ![Teaser](./images/teaser.png)
 
   <p align="center">
     <a href="https://people.epfl.ch/michele.vidulis?lang=en"><strong>Michele Vidulis*</strong></a>
