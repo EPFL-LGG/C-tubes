@@ -217,16 +217,6 @@ class CTubeNetwork:
         if self.n_tubes > 1:
             raise NotImplementedError("Getting the mesh of tube networks with more than one tube is not implemented yet.")
         return self.tubes[0].get_mesh(triangulate=triangulate, with_symmetry=with_symmetry, end_caps=end_caps, split_strips=split_strips)
-        # if self.n_tubes > 1:
-        #     raise NotImplementedError("Getting the mesh of tube networks with more than one tube is not implemented yet.")
-        # # vertices = []
-        # # faces = []
-        # # for tube in self.tubes:
-        # #     tube_vertices, tube_faces = tube.get_mesh(triangulate=triangulate, with_symmetry=with_symmetry, end_caps=end_caps, split_strips=split_strips)
-        # #     vertices.append(tube_vertices)
-        # #     faces.append(tube_faces)
-        # tube_vertices, tube_faces = self.tubes[0].get_mesh(triangulate=triangulate, with_symmetry=with_symmetry, end_caps=end_caps, split_strips=split_strips)
-        # return np.concatenate(vertices, axis=0), np.concatenate(faces, axis=0)
     
     def save_obj(self, file_path, triangulate=False, with_symmetry=True, end_caps=False, save_directrix=False, split_strips=False, max_quads_per_strip=None, object_name='tube_network'):
         if self.n_tubes == 1:
