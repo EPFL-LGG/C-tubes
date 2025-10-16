@@ -21,10 +21,13 @@
 
 <p align="center">
   <a href='https://infoscience.epfl.ch/entities/publication/797b6605-04d1-4632-9f1b-bb3cfdade33a'>
-    <img src='https://img.shields.io/badge/Paper-PDF-red?style=flat-square' alt='Paper PDF'>
+    <img src='https://img.shields.io/badge/Paper-PDF-red?style=flat-square' alt='Paper PDF' style="vertical-align: middle;">
   </a>
   <a href='https://go.epfl.ch/c-tubes/' style='padding-left: 0.5rem;'>
-    <img src='https://img.shields.io/badge/Project-Page-blue?style=flat-square' alt='Project Page'>
+    <img src='https://img.shields.io/badge/Project-Page-blue?style=flat-square' alt='Project Page' style="vertical-align: middle;">
+  </a>
+  <a href='http://www.replicabilitystamp.org/#https-github-com-epfl-lgg-c-tubes' style='padding-left: 0.5rem;'>
+    <img src='https://img.shields.io/badge/Replicability-GRSI-green?style=flat-square' alt='Replicability GRSI' style="vertical-align: middle;"/>
   </a>
 </p>
 
