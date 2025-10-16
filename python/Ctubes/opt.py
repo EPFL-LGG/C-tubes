@@ -300,9 +300,7 @@ class CTubeOptimizationProblem:
                 else:
                     assert self.tube_network.n_tubes == 1, "Non-planar profiles are only supported for single tubes."
                     assert didx == 3 * self.tube_network.tubes[0].M * self.tube_network.tubes[0].N
-                    # plane_normals = torch.swapaxes(params[idx:idx+didx].reshape(self.tube_network.tubes[0].N, self.tube_network.tubes[0].M, 3), 0, 1)
                     plane_normals = params[idx:idx+didx].reshape(self.tube_network.tubes[0].M, self.tube_network.tubes[0].N, 3)
-                # plane_normals = params[idx:idx+didx].reshape(-1, 3)
             else:
                 n_pn = self.tube_network.M
                 n_pn_free = n_pn - self.tube_network.n_tubes_with_symmetry

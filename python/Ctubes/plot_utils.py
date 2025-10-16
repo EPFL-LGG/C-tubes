@@ -1,4 +1,3 @@
-from Ctubes.geometry_utils import angle_around_axis, align_point_cloud, rotate_about_axis, is_tube_pq
 from matplotlib.patches import Polygon
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
@@ -7,10 +6,7 @@ import os
 from PIL import Image
 from scipy.spatial import ConvexHull
 import torch
-from Ctubes.tube_generation import (
-    compute_ctube_topology, get_flattened_strips, compute_ctube_topology_tri, get_flattened_strips_tri, 
-    compute_unrolled_strips
-)
+from Ctubes.tube_generation import compute_unrolled_strips
 
 LINEWIDTH_REF = 1.0
 
@@ -141,15 +137,6 @@ def plot_tube(directrix, ctube_vertices, fig=None, ax=None, save_path=None, xlim
         for i in range(n_target_cross_sections):
             ax.fill(target_cross_sections[i, :, 0], target_cross_sections[i, :, 1], color=target_cross_section_color, alpha=0.5)
 
-    # # Color the quads that lie on one side of the tube
-    # for i in range(M-1):
-    #     for j in range(1):
-    #         ax.fill([ctube_vertices[i, j, 0], ctube_vertices[i+1, j, 0], ctube_vertices[i+1, j+1, 0], ctube_vertices[i, j+1, 0]], 
-    #                     [ctube_vertices[i, j, 1], ctube_vertices[i+1, j, 1], ctube_vertices[i+1, j+1, 1], ctube_vertices[i, j+1, 1]], color='green', alpha=0.2)
-    #     for j in range(1, N-1):
-    #         ax.fill([ctube_vertices[i, j, 0], ctube_vertices[i+1, j, 0], ctube_vertices[i+1, j+1, 0], ctube_vertices[i, j+1, 0]], 
-    #                     [ctube_vertices[i, j, 1], ctube_vertices[i+1, j, 1], ctube_vertices[i+1, j+1, 1], ctube_vertices[i, j+1, 1]], color='white', alpha=0.8, )
-
     ax.set_aspect('equal')
     if xlim is not None:
         ax.set_xlim(xlim)
@@ -159,8 +146,6 @@ def plot_tube(directrix, ctube_vertices, fig=None, ax=None, save_path=None, xlim
         ax.set_ylim(ylim)
     else:
         ax.set_ylim([aabb_min[1] - 0.05 * extent_aabb[1], aabb_max[1] + 0.05 * extent_aabb[1]])
-    # ax.set_xlim([aabb_min[0] - 0.05 * extent_aabb[0], aabb_max[0] + 0.05 * extent_aabb[0]])
-    # ax.set_ylim([aabb_min[1] - 0.05 * extent_aabb[1], aabb_max[1] + 0.05 * extent_aabb[1]])
     ax.axis('off')
 
     if save_path is not None:
@@ -223,8 +208,6 @@ def plot_tube_3d(directrix, ctube_vertices, cps=None, fig=None, ax=None, save_pa
         j = 0
         ridge = ctube_vertices[:, j, :]
         ax.plot(*ridge.T, tube_color, alpha=0.5, linewidth=LINEWIDTH_REF)
-        # ax.plot(*ridge[0], tube_color, marker='.', markersize=6)  # plot marker on the first and last nodes
-        # ax.plot(*ridge[-1], tube_color, marker='.', markersize=6)
 
     # Plot target cross-sections
     if target_cross_sections is not None:
@@ -296,14 +279,11 @@ def plot_tube_3d(directrix, ctube_vertices, cps=None, fig=None, ax=None, save_pa
 
     return fig, ax
 
-def plot_unrolled_strips(ctube_vertices, fig=None, ax=None, save_path=None, xlim=None, ylim=None, y_offset_total=None, y_offset_per_strip=None, selected_strips=None, optimal_packing=False, axes_first_edges=None, points_first_nodes=None, strip_colors=None, offscreen=False):
+def plot_unrolled_strips(ctube_vertices, fig=None, ax=None, save_path=None, xlim=None, ylim=None, y_offset_total=None, y_offset_per_strip=None, selected_strips=None, axes_first_edges=None, points_first_nodes=None, strip_colors=None, offscreen=False):
     '''
     Returns:
         fig, ax
     '''
-    
-    if optimal_packing:
-        raise NotImplementedError  # TODO: test https://github.com/seanys/2D-Irregular-Packing-Algorithm
     
     if fig is None and ax is None:
         fig = plt.figure(figsize=(6, 6), dpi=100)

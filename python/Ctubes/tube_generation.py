@@ -415,7 +415,7 @@ def compute_unrolled_strips(ctube_vertices, triangulate=False, global_face_indic
 # --------------------------------------------------------------------------------
 # Strip unrolling (triangulated, not necessarily PQ)
 # --------------------------------------------------------------------------------
-# NOTE: there is substantial code duplication with the PQ version (TODO: refactor)
+# NOTE: there is substantial code duplication with the PQ version
 
 def align_triangle_xy(vertices_tri, reference_vertex, reference_edge, flip_normal=False):
     '''

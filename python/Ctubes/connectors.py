@@ -202,7 +202,6 @@ class Connector:
         return self.transform_arm_frame_to_world(torch.cat([arm.get_cross_section_vertices_3d() for arm in self.arms], dim=0), arm_ids).reshape(self.n_arms, -1, 3)
     
     def plot(self, fig=None, ax=None, save_path=None, xlim=None, ylim=None, zlim=None, facecolor=(0.5, 0.5, 0.5, 0.5), alpha=1.0, arm_section_color='r', offscreen=False, show_arm_faces=False):
-        # print(self.get_arms_cross_section_vertices().shape)
         fig, ax = plot_convex_hull(self.get_arms_cross_section_vertices().reshape(-1, 3), fig=fig, ax=ax, save_path=save_path, xlim=xlim, ylim=ylim, zlim=zlim, facecolor=facecolor, alpha=alpha, offscreen=offscreen)
         if show_arm_faces:
             verts = list(self.get_arms_cross_section_vertices().detach().numpy()) # add a list of arrays of shape (n_points_cs, 3)
